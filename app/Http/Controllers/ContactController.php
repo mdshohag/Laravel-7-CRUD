@@ -25,7 +25,18 @@ class ContactController extends Controller
      */
     public function create()
     {
-        return view('contacts.create');
+
+        $emailshow = Contact::all();
+
+        return view('contacts.create', compact('emailshow'));
+    }
+
+    public function findEmail(Request $request){
+        $data = Contact::select('first_name')->where('id', $request->id)->first();
+
+        //$request->id here option
+
+        return response()->json($data); 
     }
 
     /**

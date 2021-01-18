@@ -14,8 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('contacts.create');
+    return view('welcome');
 });
+
+Route::get('/findEmail','ContactController@findEmail');
 
 Route::resource('contacts', 'ContactController');
 

@@ -38,7 +38,29 @@
           <div class="form-group">
               <label for="job_title">Job Title:</label>
               <input type="text" class="form-control" name="job_title"/>
-          </div>                         
+          </div>   
+          <div class="form-group">
+              <label for="sel1">Select list:</label>
+              <select class="form-control emaillist" id="sel1">
+                <option value="">Select</option>
+
+                @foreach($emailshow as $emailname)
+                <option value="{{$emailname->id}}">{{$emailname->email}}</option>
+
+                @endforeach
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="sel1">Select name:</label>
+              <input type="text" class="firstname"/>
+              <!--
+              <select class="form-control namelist" id="sel1">
+                <option value="0" disable="true" selected="true">Select Name</option>
+
+              </select>
+
+              -->
+            </div>                       
           <button type="submit" class="btn btn-primary-outline">Add contact</button>
       </form>
   </div>
